@@ -1,4 +1,4 @@
-# 317 NUMBER ONE / Oldblturer - Security Analysis
+# 317 Stealer
 
 This repository contains a Windows/Electron-based data collection and exfiltration program. The source code includes harmful behavior such as Discord token collection, browser data extraction, screenshot capture, live screen streaming, HVNC, Discord client injection, anti-VM/sandbox checks, and data delivery through Telegram or Discord webhooks.
 
